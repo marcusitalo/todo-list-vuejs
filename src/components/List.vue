@@ -385,7 +385,7 @@ sup {
     flex: 1;
   }
   .task-container label[data-v-264bddce] {
-    font-size: 10px;
+    font-size: 9px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -407,7 +407,7 @@ sup {
     flex: 1;
   }
   .task-container label[data-v-264bddce] {
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 </style>
