@@ -227,6 +227,10 @@ section.todo-list {
   flex: 10;
   flex-basis: auto;
 }
+.task-options {
+  text-align: left;
+  flex: 1;
+}
 details {
   transition: 5s;
   margin: 5px;
@@ -242,12 +246,12 @@ summary.task {
   width: 100%;
 }
 code {
-  width: 95%;
   display: block;
   background-color: #7b7360;
   padding: 10px;
   margin: 10px 0px;
   border-left: 5px solid #565247;
+  word-break: break-all;
 }
 code a {
   color: #ffffff;
@@ -363,6 +367,9 @@ sup {
   margin-left: 7px;
 }
 @media screen and (max-width: 800px) {
+  section.todo-list[data-v-264bddce] {
+    margin: 0px;
+  }
   .todo-container {
     width: 90vw !important;
     margin-top: 18vw !important;
@@ -372,6 +379,9 @@ sup {
   .todo-container {
     width: 95vw !important;
     margin-top: 35vw !important;
+  }
+  section.todo-list[data-v-264bddce] {
+    margin: 0px;
   }
 }
 </style>
