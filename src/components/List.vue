@@ -229,7 +229,7 @@ section.todo-list {
 }
 .task-options {
   text-align: left;
-  flex: 1;
+  flex: 2;
 }
 details {
   transition: 5s;
@@ -374,6 +374,19 @@ sup {
     width: 90vw !important;
     margin-top: 18vw !important;
   }
+  .removeTask {
+    display: block;
+    opacity: 1;
+  }
+  .task-options[data-v-264bddce] {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .task-container label[data-v-264bddce] {
+    font-size: 10px;
+  }
 }
 @media screen and (max-width: 576px) {
   .todo-container {
@@ -382,6 +395,19 @@ sup {
   }
   section.todo-list[data-v-264bddce] {
     margin: 0px;
+  }
+  .removeTask {
+    display: block;
+    opacity: 1;
+  }
+  .task-options[data-v-264bddce] {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .task-container label[data-v-264bddce] {
+    font-size: 10px;
   }
 }
 </style>
