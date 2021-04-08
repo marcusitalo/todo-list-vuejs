@@ -157,7 +157,9 @@ export default {
         " " +
         today.getHours() +
         ":" +
-        today.getMinutes()
+        ("0" + today.getMinutes()).slice(-2) +
+        ":" +
+        ("0" + today.getSeconds()).slice(-2)
       );
     },
     getDateFormat() {
@@ -173,8 +175,12 @@ export default {
 
       this.setInLocalStorage();
     },
-    deleteTask: function(task) {
-      this.tasks.shift(task);
+    deleteTask: function(taskDelete) {
+      for (let [i, task] of this.tasks.entries()) {
+        if (taskDelete.created_at === task.created_at) {
+          this.tasks.splice(i, 1);
+        }
+      }
       this.setInLocalStorage();
     },
   },
