@@ -28,23 +28,7 @@ export default {
 body {
   background: linear-gradient(
     -45deg,
-    /* #ff2400,
-    #e81d1d,
-    #e8b71d,
-    #e3e81d,
-    #1de840,
-    #1ddde8,
-    #2b1de8,
-    #dd00f3,
-    #dd00f3 */
-      /* #808080,
-    #6a6a6a,
-    #545454,
-    #3f3f3f,
-    #2c2c2c,
-    #191919,
-    #000000 */
-      #f9eac3,
+    #f9eac3,
     #f9eac3,
     #cbbf9f,
     #9f957d,
@@ -58,19 +42,20 @@ body {
   -z-animation: rainbowBackground 30s ease infinite;
   -o-animation: rainbowBackground 30s ease infinite;
   animation: rainbowBackground 30s ease infinite;
+  transition: 3s;
 }
 
 #app {
   text-align: center;
 }
 ::-webkit-scrollbar {
-  width: 7px;
-  border: 1px solid var(--ligthblue);
+  width: 4px;
+  border: 1px solid transparent;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
+  background: transparent;
   border-radius: 10px;
-  height: 200px;
+  height: 30px;
 }
 </style>

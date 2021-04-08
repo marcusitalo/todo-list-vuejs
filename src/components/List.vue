@@ -8,14 +8,21 @@
           v-bind:class="{ checked: !task.state }"
           :key="index"
         >
+          <div class="task-options">
+            <span class="removeTask" v-on:click="deleteTask(task)"></span>
+            <span class="checkTask" v-on:click="checkTask(task, $event)"></span>
+          </div>
           <div class="task-card">
             <details>
-              <summary class="task">{{ task.title }}</summary>
+              <summary class="task">
+                {{ task.title }}
+              </summary>
               <hr />
               <p>
                 {{ task.description }}
               </p>
               <code v-if="task.url">
+                <span class="icon-link"></span>
                 <a target="_new" :href="task.url">{{ task.url }}</a>
               </code>
               <label>{{ "✎" + task.created_at }}</label>
@@ -23,10 +30,6 @@
                 task.completed_at ? "✓" + task.completed_at : ""
               }}</label>
             </details>
-          </div>
-          <div class="task-options">
-            <span class="removeTask" v-on:click="deleteTask(task)"></span>
-            <span class="checkTask" v-on:click="checkTask(task, $event)"></span>
           </div>
         </div>
       </div>
@@ -222,14 +225,16 @@ section.todo-list {
   margin: 5px;
   border-radius: 10px;
   text-align: left;
+  position: relative;
 }
 .task-card {
   flex: 10;
   flex-basis: auto;
 }
 .task-options {
-  text-align: left;
-  flex: 2;
+  position: absolute;
+  right: 0px;
+  top: 2px;
 }
 details {
   transition: 5s;
@@ -237,24 +242,41 @@ details {
 }
 details p {
   font-family: "Oswald";
+  white-space: pre-line;
 }
 details[open] p {
   animation: animateDown 0.5s linear forwards;
 }
 summary.task {
   font-weight: 600;
-  width: 100%;
+  width: 90%;
+  position: relative;
+  color: #565247;
 }
 code {
-  display: block;
-  background-color: #7b7360;
-  padding: 10px;
+  display: flex;
+  padding: 0px;
   margin: 10px 0px;
-  border-left: 5px solid #565247;
   word-break: break-all;
 }
+code:hover a {
+  color: #565247;
+}
+code:hover .icon-link {
+  background-position: bottom;
+}
 code a {
-  color: #ffffff;
+  color: #818181;
+  margin-top: -3px;
+  margin-left: 5px;
+  font-size: 12px;
+}
+.icon-link {
+  width: 12px;
+  height: 12px;
+  background-image: url("../assets/images/link.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .removeTask,
 .checkTask {
@@ -269,8 +291,6 @@ code a {
 .removeTask {
   background-image: url("../assets/images/trash.png");
   background-size: 100%;
-  opacity: 0;
-  transition: 1s;
 }
 .checkTask {
   background-image: url("../assets/images/checkbox.png");
@@ -279,13 +299,6 @@ code a {
 }
 .checked .checkTask {
   background-position: 0px 0px;
-}
-.task-container:hover .removeTask {
-  opacity: 1;
-  transition: 1s;
-}
-.checked .removeTask {
-  display: none;
 }
 .task-container label {
   font-size: 12px;
@@ -374,10 +387,6 @@ sup {
     width: 90vw !important;
     margin-top: 18vw !important;
   }
-  .removeTask {
-    display: block;
-    opacity: 1;
-  }
   .task-options[data-v-264bddce] {
     text-align: left;
     display: flex;
@@ -395,10 +404,6 @@ sup {
   }
   section.todo-list[data-v-264bddce] {
     margin: 0px;
-  }
-  .removeTask {
-    display: block;
-    opacity: 1;
   }
   .task-options[data-v-264bddce] {
     text-align: left;

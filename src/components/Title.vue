@@ -10,7 +10,7 @@
         </div>
       </div>
     </header>
-    <img src="@/assets/images/log.png" class="logo" />
+    <img src="@/assets/images/logo.png" class="logo" />
   </div>
 </template>
 
