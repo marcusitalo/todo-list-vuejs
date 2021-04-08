@@ -281,7 +281,7 @@ code a {
   width: 12px;
   height: 12px;
   background-image: url("../assets/images/link.png");
-  background-size: 100%;
+  background-size: 100% 200%;
   background-repeat: no-repeat;
 }
 .removeTask,
